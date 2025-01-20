@@ -15,7 +15,7 @@ namespace GDZ.RU
         public RegForm()
         {
             InitializeComponent();
-            error_text.Visible = false;
+            error_text.Visible = false; 
         }
 
         private void label1_Click(object sender, EventArgs e)
