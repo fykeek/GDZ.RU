@@ -48,5 +48,31 @@ namespace GDZ.RU
         {
 
         }
+
+        private void solution_Click(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            SolutionForm solutionForm = new SolutionForm(pb.Tag.ToString());
+            solutionForm.Show();
+        }
+
+        private void hide_Click(object sender, EventArgs e)
+        {
+            if(filters.Height == hide_filters.Height + 20) 
+            {
+                filters.Height = 200;
+                hide_filters.Text = "Скрыть";
+            }
+            else
+            {
+                filters.Height = hide_filters.Height + 20;
+                hide_filters.Text = "Развернуть";
+            }
+        }
+
+        private void filters_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

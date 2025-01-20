@@ -28,5 +28,16 @@ namespace GDZ.RU
             mainform.ShowDialog();
             
         }
+
+        private void login_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void register_Click(object sender, EventArgs e)
+        {
+            RegForm regForm = new RegForm();
+            regForm.ShowDialog();
+        }
     }
 }

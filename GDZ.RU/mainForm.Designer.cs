@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.web = new System.Windows.Forms.Panel();
+            this.web_name = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.Panel();
             this.log_in = new System.Windows.Forms.Panel();
-            this.web_name = new System.Windows.Forms.Label();
-            this.login = new System.Windows.Forms.Button();
-            this.register = new System.Windows.Forms.Button();
             this.secret = new System.Windows.Forms.Button();
+            this.register = new System.Windows.Forms.Button();
+            this.login = new System.Windows.Forms.Button();
             this.web.SuspendLayout();
             this.log_in.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +48,16 @@
             this.web.Name = "web";
             this.web.Size = new System.Drawing.Size(1027, 141);
             this.web.TabIndex = 0;
+            // 
+            // web_name
+            // 
+            this.web_name.AutoSize = true;
+            this.web_name.Font = new System.Drawing.Font("asinastra", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.web_name.Location = new System.Drawing.Point(329, 19);
+            this.web_name.Name = "web_name";
+            this.web_name.Size = new System.Drawing.Size(348, 100);
+            this.web_name.TabIndex = 0;
+            this.web_name.Text = "GDZ.RU\r\n";
             // 
             // logo
             // 
@@ -69,36 +79,6 @@
             this.log_in.Size = new System.Drawing.Size(1027, 258);
             this.log_in.TabIndex = 2;
             // 
-            // web_name
-            // 
-            this.web_name.AutoSize = true;
-            this.web_name.Font = new System.Drawing.Font("asinastra", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.web_name.Location = new System.Drawing.Point(329, 19);
-            this.web_name.Name = "web_name";
-            this.web_name.Size = new System.Drawing.Size(348, 100);
-            this.web_name.TabIndex = 0;
-            this.web_name.Text = "GDZ.RU\r\n";
-            // 
-            // login
-            // 
-            this.login.Font = new System.Drawing.Font("asinastra", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.login.Location = new System.Drawing.Point(12, 18);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(387, 148);
-            this.login.TabIndex = 0;
-            this.login.Text = "Войти";
-            this.login.UseVisualStyleBackColor = true;
-            // 
-            // register
-            // 
-            this.register.Font = new System.Drawing.Font("asinastra", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.register.Location = new System.Drawing.Point(617, 18);
-            this.register.Name = "register";
-            this.register.Size = new System.Drawing.Size(398, 148);
-            this.register.TabIndex = 1;
-            this.register.Text = "Регистрация";
-            this.register.UseVisualStyleBackColor = true;
-            // 
             // secret
             // 
             this.secret.Location = new System.Drawing.Point(426, 24);
@@ -109,6 +89,28 @@
             this.secret.UseVisualStyleBackColor = true;
             this.secret.Click += new System.EventHandler(this.secret_Click);
             // 
+            // register
+            // 
+            this.register.Font = new System.Drawing.Font("asinastra", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.register.Location = new System.Drawing.Point(617, 18);
+            this.register.Name = "register";
+            this.register.Size = new System.Drawing.Size(398, 148);
+            this.register.TabIndex = 1;
+            this.register.Text = "Регистрация";
+            this.register.UseVisualStyleBackColor = true;
+            this.register.Click += new System.EventHandler(this.register_Click);
+            // 
+            // login
+            // 
+            this.login.Font = new System.Drawing.Font("asinastra", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.login.Location = new System.Drawing.Point(12, 18);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(387, 148);
+            this.login.TabIndex = 0;
+            this.login.Text = "Войти";
+            this.login.UseVisualStyleBackColor = true;
+            this.login.Click += new System.EventHandler(this.login_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -118,7 +120,7 @@
             this.Controls.Add(this.logo);
             this.Controls.Add(this.web);
             this.Font = new System.Drawing.Font("asinastra", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GDZ.RU";
