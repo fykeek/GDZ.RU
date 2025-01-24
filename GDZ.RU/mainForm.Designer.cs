@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.web = new System.Windows.Forms.Panel();
             this.web_name = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.log_in = new System.Windows.Forms.Panel();
             this.secret = new System.Windows.Forms.Button();
             this.register = new System.Windows.Forms.Button();
             this.login = new System.Windows.Forms.Button();
             this.web.SuspendLayout();
+            this.logo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.log_in.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,11 +65,22 @@
             // 
             // logo
             // 
+            this.logo.Controls.Add(this.pictureBox1);
             this.logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.logo.Location = new System.Drawing.Point(0, 141);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(1027, 314);
             this.logo.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(130, -8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(760, 319);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // log_in
             // 
@@ -123,10 +138,12 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GDZ.RU";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.web.ResumeLayout(false);
             this.web.PerformLayout();
+            this.logo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.log_in.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -141,6 +158,7 @@
         private System.Windows.Forms.Button register;
         private System.Windows.Forms.Button login;
         private System.Windows.Forms.Button secret;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

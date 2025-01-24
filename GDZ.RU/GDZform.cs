@@ -10,13 +10,41 @@ using System.Windows.Forms;
 
 namespace GDZ.RU
 {
+
+    public struct solution
+    {
+        public string name;
+        public string subject;
+        public string clas_s;
+        public int price;
+        public PictureBox picture;
+        public Label label;
+
+        public solution(string _name, string _subject, string _clas_s, int _price)
+        {
+            name = _name;
+            subject = _subject;
+            clas_s = _clas_s;
+            price = _price;
+            picture = new PictureBox();
+            picture.Load("../../Pictures/" + name + ".jpg");
+            label = new Label();
+            label.Text = name;
+        }
+
+    }
+
     public partial class GDZform : System.Windows.Forms.Form
     {
+        List<solution> solutions = new List<solution>;
+
         public GDZform()
         {
             InitializeComponent();
 
             nickname.Visible = false;
+            solutions[0] = new solution("Русский списование", "Русский", "1-11", 150);
+            solutions[1] = new solution("Сообшение по истории 20 в.", "История", "9-11", 200);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
