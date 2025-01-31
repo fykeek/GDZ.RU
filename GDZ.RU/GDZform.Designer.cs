@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GDZform));
             this.filters = new System.Windows.Forms.Panel();
             this.find_button = new System.Windows.Forms.Button();
             this.choose_subjet = new System.Windows.Forms.Label();
@@ -37,16 +36,9 @@
             this.write_name_ans = new System.Windows.Forms.TextBox();
             this.hide_filters = new System.Windows.Forms.Button();
             this.result = new System.Windows.Forms.Panel();
-            this.solutionText2 = new System.Windows.Forms.Label();
-            this.solutionFoto2 = new System.Windows.Forms.PictureBox();
-            this.solutionText1 = new System.Windows.Forms.Label();
-            this.solutionFoto1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nickname = new System.Windows.Forms.Label();
             this.filters.SuspendLayout();
-            this.result.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.solutionFoto2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.solutionFoto1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +55,7 @@
             this.filters.Location = new System.Drawing.Point(0, 0);
             this.filters.Margin = new System.Windows.Forms.Padding(6);
             this.filters.Name = "filters";
-            this.filters.Size = new System.Drawing.Size(1163, 200);
+            this.filters.Size = new System.Drawing.Size(1240, 200);
             this.filters.TabIndex = 0;
             this.filters.Paint += new System.Windows.Forms.PaintEventHandler(this.filters_Paint);
             // 
@@ -126,61 +118,14 @@
             // 
             // result
             // 
+            this.result.AutoScroll = true;
             this.result.BackColor = System.Drawing.Color.LightBlue;
-            this.result.Controls.Add(this.solutionText2);
-            this.result.Controls.Add(this.solutionFoto2);
-            this.result.Controls.Add(this.solutionText1);
-            this.result.Controls.Add(this.solutionFoto1);
             this.result.Dock = System.Windows.Forms.DockStyle.Top;
             this.result.Location = new System.Drawing.Point(0, 200);
             this.result.Margin = new System.Windows.Forms.Padding(6);
             this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(1163, 584);
+            this.result.Size = new System.Drawing.Size(1240, 408);
             this.result.TabIndex = 1;
-            // 
-            // solutionText2
-            // 
-            this.solutionText2.AutoSize = true;
-            this.solutionText2.Location = new System.Drawing.Point(339, 220);
-            this.solutionText2.Name = "solutionText2";
-            this.solutionText2.Size = new System.Drawing.Size(267, 24);
-            this.solutionText2.TabIndex = 3;
-            this.solutionText2.Text = "Сообшение по истории 20 в.";
-            // 
-            // solutionFoto2
-            // 
-            this.solutionFoto2.Image = ((System.Drawing.Image)(resources.GetObject("solutionFoto2.Image")));
-            this.solutionFoto2.Location = new System.Drawing.Point(355, 20);
-            this.solutionFoto2.Name = "solutionFoto2";
-            this.solutionFoto2.Size = new System.Drawing.Size(230, 181);
-            this.solutionFoto2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.solutionFoto2.TabIndex = 2;
-            this.solutionFoto2.TabStop = false;
-            this.solutionFoto2.Tag = "Сообшение по истории 20 в.";
-            this.solutionFoto2.Click += new System.EventHandler(this.solution_Click);
-            // 
-            // solutionText1
-            // 
-            this.solutionText1.AutoSize = true;
-            this.solutionText1.Location = new System.Drawing.Point(59, 220);
-            this.solutionText1.Name = "solutionText1";
-            this.solutionText1.Size = new System.Drawing.Size(194, 24);
-            this.solutionText1.TabIndex = 1;
-            this.solutionText1.Tag = "russki1";
-            this.solutionText1.Text = "Русский списование";
-            this.solutionText1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // solutionFoto1
-            // 
-            this.solutionFoto1.Image = ((System.Drawing.Image)(resources.GetObject("solutionFoto1.Image")));
-            this.solutionFoto1.Location = new System.Drawing.Point(10, 20);
-            this.solutionFoto1.Name = "solutionFoto1";
-            this.solutionFoto1.Size = new System.Drawing.Size(285, 181);
-            this.solutionFoto1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.solutionFoto1.TabIndex = 0;
-            this.solutionFoto1.TabStop = false;
-            this.solutionFoto1.Tag = "Русский списование";
-            this.solutionFoto1.Click += new System.EventHandler(this.solution_Click);
             // 
             // panel1
             // 
@@ -189,7 +134,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 597);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1163, 77);
+            this.panel1.Size = new System.Drawing.Size(1240, 77);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -207,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1163, 674);
+            this.ClientSize = new System.Drawing.Size(1240, 674);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.result);
             this.Controls.Add(this.filters);
@@ -216,12 +161,9 @@
             this.Name = "GDZform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GDZ.RU";
+            this.Load += new System.EventHandler(this.GDZform_load);
             this.filters.ResumeLayout(false);
             this.filters.PerformLayout();
-            this.result.ResumeLayout(false);
-            this.result.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.solutionFoto2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.solutionFoto1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -240,9 +182,5 @@
         private System.Windows.Forms.Button find_button;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label nickname;
-        private System.Windows.Forms.Label solutionText1;
-        private System.Windows.Forms.PictureBox solutionFoto1;
-        private System.Windows.Forms.PictureBox solutionFoto2;
-        private System.Windows.Forms.Label solutionText2;
     }
 }

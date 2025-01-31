@@ -12,12 +12,15 @@ namespace GDZ.RU
 {
     public partial class SolutionForm : System.Windows.Forms.Form
     {
-        public SolutionForm(string solutin_Text)
+        public SolutionForm(solution sol)
         {
             InitializeComponent();
-            Solutionlabel.Text = solutin_Text;
-            SolutionPic.Load("../../Pictures/" + solutin_Text + ".jpg");
-            Text = solutin_Text;
+            Solutionlabel.Text = sol.name;
+            SolutionPic.Load("../../Pictures/" + sol.name + ".jpg");
+            Text = sol.name;
+            subjectLabel.Text = "Предмет: " + sol.subject;
+            classLabel.Text = "Класс: " + sol.clas_s;
+            priceLabel.Text = "Цена: " + sol.price.ToString();
         }
 
         private void SolutionPic_Click(object sender, EventArgs e)
