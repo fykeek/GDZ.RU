@@ -38,6 +38,7 @@
             this.result = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nickname = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.filters.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             this.filters.Location = new System.Drawing.Point(0, 0);
             this.filters.Margin = new System.Windows.Forms.Padding(6);
             this.filters.Name = "filters";
-            this.filters.Size = new System.Drawing.Size(1240, 200);
+            this.filters.Size = new System.Drawing.Size(1306, 200);
             this.filters.TabIndex = 0;
             this.filters.Paint += new System.Windows.Forms.PaintEventHandler(this.filters_Paint);
             // 
@@ -67,6 +68,7 @@
             this.find_button.TabIndex = 5;
             this.find_button.Text = "Найти";
             this.find_button.UseVisualStyleBackColor = true;
+            this.find_button.Click += new System.EventHandler(this.find_button_Click);
             // 
             // choose_subjet
             // 
@@ -81,6 +83,16 @@
             // comboBox_subject
             // 
             this.comboBox_subject.FormattingEnabled = true;
+            this.comboBox_subject.Items.AddRange(new object[] {
+            "",
+            "Русский",
+            "История",
+            "Математика",
+            "Биология",
+            "Русский/Литиратура",
+            "Алгебра",
+            "Физика",
+            "Геометрия"});
             this.comboBox_subject.Location = new System.Drawing.Point(176, 112);
             this.comboBox_subject.Name = "comboBox_subject";
             this.comboBox_subject.Size = new System.Drawing.Size(163, 32);
@@ -124,7 +136,7 @@
             this.result.Location = new System.Drawing.Point(0, 200);
             this.result.Margin = new System.Windows.Forms.Padding(6);
             this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(1240, 408);
+            this.result.Size = new System.Drawing.Size(1306, 498);
             this.result.TabIndex = 1;
             // 
             // panel1
@@ -132,9 +144,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.nickname);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 597);
+            this.panel1.Location = new System.Drawing.Point(0, 699);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1240, 77);
+            this.panel1.Size = new System.Drawing.Size(1306, 77);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -148,11 +160,15 @@
             this.nickname.Text = "label1";
             this.nickname.Click += new System.EventHandler(this.nickname_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // GDZform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1240, 674);
+            this.ClientSize = new System.Drawing.Size(1306, 776);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.result);
             this.Controls.Add(this.filters);
@@ -182,5 +198,6 @@
         private System.Windows.Forms.Button find_button;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label nickname;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
