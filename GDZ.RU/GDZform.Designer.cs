@@ -28,37 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.filters = new System.Windows.Forms.Panel();
+            this.filters_panel = new System.Windows.Forms.Panel();
             this.find_button = new System.Windows.Forms.Button();
             this.choose_subjet = new System.Windows.Forms.Label();
             this.comboBox_subject = new System.Windows.Forms.ComboBox();
             this.name_ans = new System.Windows.Forms.Label();
             this.write_name_ans = new System.Windows.Forms.TextBox();
             this.hide_filters = new System.Windows.Forms.Button();
-            this.result = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nickname = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.filters.SuspendLayout();
+            this.result = new System.Windows.Forms.Panel();
+            this.class_box = new System.Windows.Forms.TextBox();
+            this.class_text = new System.Windows.Forms.Label();
+            this.filters_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // filters
+            // filters_panel
             // 
-            this.filters.BackColor = System.Drawing.Color.PaleGreen;
-            this.filters.Controls.Add(this.find_button);
-            this.filters.Controls.Add(this.choose_subjet);
-            this.filters.Controls.Add(this.comboBox_subject);
-            this.filters.Controls.Add(this.name_ans);
-            this.filters.Controls.Add(this.write_name_ans);
-            this.filters.Controls.Add(this.hide_filters);
-            this.filters.Dock = System.Windows.Forms.DockStyle.Top;
-            this.filters.Location = new System.Drawing.Point(0, 0);
-            this.filters.Margin = new System.Windows.Forms.Padding(6);
-            this.filters.Name = "filters";
-            this.filters.Size = new System.Drawing.Size(1306, 200);
-            this.filters.TabIndex = 0;
-            this.filters.Paint += new System.Windows.Forms.PaintEventHandler(this.filters_Paint);
+            this.filters_panel.BackColor = System.Drawing.Color.PaleGreen;
+            this.filters_panel.Controls.Add(this.class_text);
+            this.filters_panel.Controls.Add(this.class_box);
+            this.filters_panel.Controls.Add(this.find_button);
+            this.filters_panel.Controls.Add(this.choose_subjet);
+            this.filters_panel.Controls.Add(this.comboBox_subject);
+            this.filters_panel.Controls.Add(this.name_ans);
+            this.filters_panel.Controls.Add(this.write_name_ans);
+            this.filters_panel.Controls.Add(this.hide_filters);
+            this.filters_panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.filters_panel.Location = new System.Drawing.Point(0, 0);
+            this.filters_panel.Margin = new System.Windows.Forms.Padding(6);
+            this.filters_panel.Name = "filters_panel";
+            this.filters_panel.Size = new System.Drawing.Size(1306, 200);
+            this.filters_panel.TabIndex = 0;
+            this.filters_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.filters_Paint);
             // 
             // find_button
             // 
@@ -128,25 +132,14 @@
             this.hide_filters.UseVisualStyleBackColor = true;
             this.hide_filters.Click += new System.EventHandler(this.hide_Click);
             // 
-            // result
-            // 
-            this.result.AutoScroll = true;
-            this.result.BackColor = System.Drawing.Color.LightBlue;
-            this.result.Dock = System.Windows.Forms.DockStyle.Top;
-            this.result.Location = new System.Drawing.Point(0, 200);
-            this.result.Margin = new System.Windows.Forms.Padding(6);
-            this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(1306, 498);
-            this.result.TabIndex = 1;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.nickname);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 699);
+            this.panel1.Location = new System.Drawing.Point(0, 716);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1306, 77);
+            this.panel1.Size = new System.Drawing.Size(1306, 60);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -164,6 +157,36 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // result
+            // 
+            this.result.AutoScroll = true;
+            this.result.BackColor = System.Drawing.Color.LightBlue;
+            this.result.Dock = System.Windows.Forms.DockStyle.Top;
+            this.result.Location = new System.Drawing.Point(0, 200);
+            this.result.Margin = new System.Windows.Forms.Padding(6);
+            this.result.Name = "result";
+            this.result.Size = new System.Drawing.Size(1306, 515);
+            this.result.TabIndex = 1;
+            // 
+            // class_box
+            // 
+            this.class_box.Location = new System.Drawing.Point(540, 77);
+            this.class_box.Name = "class_box";
+            this.class_box.Size = new System.Drawing.Size(259, 29);
+            this.class_box.TabIndex = 6;
+            this.class_box.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // class_text
+            // 
+            this.class_text.AutoSize = true;
+            this.class_text.BackColor = System.Drawing.Color.PaleGreen;
+            this.class_text.Location = new System.Drawing.Point(472, 77);
+            this.class_text.Name = "class_text";
+            this.class_text.Size = new System.Drawing.Size(62, 24);
+            this.class_text.TabIndex = 10;
+            this.class_text.Text = "Класс";
+            this.class_text.Click += new System.EventHandler(this.label3_Click);
+            // 
             // GDZform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -171,15 +194,15 @@
             this.ClientSize = new System.Drawing.Size(1306, 776);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.result);
-            this.Controls.Add(this.filters);
+            this.Controls.Add(this.filters_panel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "GDZform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GDZ.RU";
             this.Load += new System.EventHandler(this.GDZform_load);
-            this.filters.ResumeLayout(false);
-            this.filters.PerformLayout();
+            this.filters_panel.ResumeLayout(false);
+            this.filters_panel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -188,8 +211,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel filters;
-        private System.Windows.Forms.Panel result;
+        private System.Windows.Forms.Panel filters_panel;
         private System.Windows.Forms.Button hide_filters;
         private System.Windows.Forms.Label name_ans;
         private System.Windows.Forms.TextBox write_name_ans;
@@ -199,5 +221,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label nickname;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Panel result;
+        private System.Windows.Forms.TextBox class_box;
+        private System.Windows.Forms.Label class_text;
     }
 }

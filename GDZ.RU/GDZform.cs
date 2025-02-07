@@ -18,15 +18,19 @@ namespace GDZ.RU
         public string subject;
         public string clas_s;
         public int price;
+        public int from_class;
+        public int to_class;
         public PictureBox picture;
         public Label label;
 
-        public solution(string _name, string _subject, string _clas_s, int _price)
+        public solution(string _name, string _subject, string _clas_s, int _price, int _fromc, int _toc)
         {
             name = _name;
             subject = _subject;
             clas_s = _clas_s;
             price = _price;
+            from_class = _fromc;
+            to_class = _toc;
             picture = new PictureBox();
             try
             {
@@ -52,17 +56,17 @@ namespace GDZ.RU
 
             nickname.Visible = false;
 
-            solutions[0] = new solution("Списование", "Русский", "1-11", 150);
-            solutions[1] = new solution("Сообшение по истории 20 в", "История", "9-11", 200);
-            solutions[2] = new solution("Сложение вычитание", "Математика", "1-4", 50);
-            solutions[3] = new solution("Задания по биологии", "Биология", "9-11", 150);
-            solutions[4] = new solution("Сочинение", "Литиратура", "1-11", 100);
-            solutions[5] = new solution("Уравнения", "Алгебра", "5-8", 150);
-            solutions[6] = new solution("Задачи по физике", "Физика", "7-11", 150);
-            solutions[7] = new solution("Задачи по геометрии", "Геометрия", "7-11", 150);
-            solutions[8] = new solution("Сообщение по биологии", "Биология", "5-11", 150);
-            solutions[9] = new solution("Квадратные уравнения", "Алгебра", "8-11", 200);
-            solutions[10] = new solution("Задачи по математике", "Математика", "1-4", 50);
+            solutions[0] = new solution("Списование", "Русский", "1-11", 150, 1, 11);
+            solutions[1] = new solution("Сообшение по истории 20 в", "История", "9-11", 200, 9, 11);
+            solutions[2] = new solution("Сложение вычитание", "Математика", "1-4", 50, 1, 4);
+            solutions[3] = new solution("Задания по биологии", "Биология", "9-11", 150, 9, 11);
+            solutions[4] = new solution("Сочинение", "Литиратура", "1-11", 100, 1, 11);
+            solutions[5] = new solution("Уравнения", "Алгебра", "5-8", 150, 5, 8);
+            solutions[6] = new solution("Задачи по физике", "Физика", "7-11", 150, 7, 11);
+            solutions[7] = new solution("Задачи по геометрии", "Геометрия", "7-11", 150, 7, 11);
+            solutions[8] = new solution("Сообщение по биологии", "Биология", "5-11", 150, 5, 11);
+            solutions[9] = new solution("Квадратные уравнения", "Алгебра", "8-11", 200, 8, 11);
+            solutions[10] = new solution("Задачи по математике", "Математика", "1-4", 50, 1, 4);
         }
 
         public void GDZform_load(object sender, EventArgs e)
@@ -142,14 +146,14 @@ namespace GDZ.RU
 
         private void hide_Click(object sender, EventArgs e)
         {
-            if(filters.Height == hide_filters.Height + 20) 
+            if(filters_panel.Height == hide_filters.Height + 20) 
             {
-                filters.Height = 200;
+                filters_panel.Height = 200;
                 hide_filters.Text = "Скрыть";
             }
             else
             {
-                filters.Height = hide_filters.Height + 20;
+                filters_panel.Height = hide_filters.Height + 20;
                 hide_filters.Text = "Развернуть";
             }
         }
@@ -170,7 +174,10 @@ namespace GDZ.RU
                 solutions[i].picture.Visible = true;
                 solutions[i].label.Visible = true;
 
-                if(comboBox_subject.Text != "" && comboBox_subject.Text != solutions[i].subject)
+                if((comboBox_subject.Text != "" && comboBox_subject.Text != solutions[i].subject) ||
+                    (write_name_ans.Text != "" && !solutions[i].name.Contains(write_name_ans.Text)) ||
+                    (class_box.Text != "" && (solutions[i].from_class > Convert.ToInt32(class_box.Text) ||
+                    solutions[i].to_class < Convert.ToInt32(class_box.Text))))
                 {
                     solutions[i].picture.Visible = false;
                     solutions[i].label.Visible = false;
@@ -191,6 +198,16 @@ namespace GDZ.RU
                     }
                 }
             }
-        }   
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
