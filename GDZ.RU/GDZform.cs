@@ -46,27 +46,27 @@ namespace GDZ.RU
 
     public partial class GDZform : System.Windows.Forms.Form
     {
-        static int count_solution = 11;
+        public static List<solution> solutions = new List<solution>();
 
-        solution[] solutions = new solution[count_solution];
-
+        static int count_solution = 0;
         public GDZform()
         {
             InitializeComponent();
 
+            solutions.Clear();
+            string[] strs = System.IO.File.ReadAllLines("../../solution.txt");
+
+            foreach (string str in strs)
+            {
+                string[] parts = str.Split(new string[] {", "}, StringSplitOptions.None);
+                solution solution = new solution(parts[0], parts[1], parts[2], Convert.ToInt32(parts[3]),
+                                                 Convert.ToInt32(parts[4]), Convert.ToInt32(parts[5]));
+                solutions.Add(solution);
+                count_solution++;
+            }
+
             nickname.Visible = false;
 
-            solutions[0] = new solution("Списование", "Русский", "1-11", 150, 1, 11);
-            solutions[1] = new solution("Сообшение по истории 20 в", "История", "9-11", 200, 9, 11);
-            solutions[2] = new solution("Сложение вычитание", "Математика", "1-4", 50, 1, 4);
-            solutions[3] = new solution("Задания по биологии", "Биология", "9-11", 150, 9, 11);
-            solutions[4] = new solution("Сочинение", "Литиратура", "1-11", 100, 1, 11);
-            solutions[5] = new solution("Уравнения", "Алгебра", "5-8", 150, 5, 8);
-            solutions[6] = new solution("Задачи по физике", "Физика", "7-11", 150, 7, 11);
-            solutions[7] = new solution("Задачи по геометрии", "Геометрия", "7-11", 150, 7, 11);
-            solutions[8] = new solution("Сообщение по биологии", "Биология", "5-11", 150, 5, 11);
-            solutions[9] = new solution("Квадратные уравнения", "Алгебра", "8-11", 200, 8, 11);
-            solutions[10] = new solution("Задачи по математике", "Математика", "1-4", 50, 1, 4);
         }
 
         public void GDZform_load(object sender, EventArgs e)
@@ -88,10 +88,9 @@ namespace GDZ.RU
 
                 x += 295;
                 n++;
-                if (n == 4)
+                if (x + 295 > result.Width)
                 {
                     y += 260;
-                    n = 0;
                     x = 30;
                 }
 
@@ -167,7 +166,6 @@ namespace GDZ.RU
         {
             int x = 51;
             int y = 0;
-            int n = 0;
             for (int i = 0; i < count_solution; i++)
             {
 
@@ -189,11 +187,9 @@ namespace GDZ.RU
                     solutions[i].label.Location = new Point(x + 25, 220 + y);
 
                     x += 295;
-                    n++;
-                    if (n == 4)
+                    if (x + 295 > result.Width)
                     {
                         y += 260;
-                        n = 0;
                         x = 30;
                     }
                 }
@@ -208,6 +204,11 @@ namespace GDZ.RU
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void GDZ_Resize(object sender, EventArgs e)
+        {
+            find_button_Click(null, null);
         }
     }
 }

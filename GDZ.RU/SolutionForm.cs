@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace GDZ.RU
 {
@@ -16,7 +17,11 @@ namespace GDZ.RU
         {
             InitializeComponent();
             Solutionlabel.Text = sol.name;
-            SolutionPic.Load("../../Pictures/" + sol.name + ".jpg");
+            try
+            {
+                SolutionPic.Load("../../Pictures/" + sol.name + ".jpg");
+            }
+            catch (Exception) { }
             Text = sol.name;
             subjectLabel.Text = "Предмет: " + sol.subject;
             classLabel.Text = "Класс: " + sol.clas_s;

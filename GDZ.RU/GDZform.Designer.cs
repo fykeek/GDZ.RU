@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.filters_panel = new System.Windows.Forms.Panel();
+            this.class_text = new System.Windows.Forms.Label();
+            this.class_box = new System.Windows.Forms.TextBox();
             this.find_button = new System.Windows.Forms.Button();
             this.choose_subjet = new System.Windows.Forms.Label();
             this.comboBox_subject = new System.Windows.Forms.ComboBox();
@@ -39,8 +41,6 @@
             this.nickname = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.result = new System.Windows.Forms.Panel();
-            this.class_box = new System.Windows.Forms.TextBox();
-            this.class_text = new System.Windows.Forms.Label();
             this.filters_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,25 @@
             this.filters_panel.Size = new System.Drawing.Size(1306, 200);
             this.filters_panel.TabIndex = 0;
             this.filters_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.filters_Paint);
+            // 
+            // class_text
+            // 
+            this.class_text.AutoSize = true;
+            this.class_text.BackColor = System.Drawing.Color.PaleGreen;
+            this.class_text.Location = new System.Drawing.Point(472, 77);
+            this.class_text.Name = "class_text";
+            this.class_text.Size = new System.Drawing.Size(62, 24);
+            this.class_text.TabIndex = 10;
+            this.class_text.Text = "Класс";
+            this.class_text.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // class_box
+            // 
+            this.class_box.Location = new System.Drawing.Point(540, 77);
+            this.class_box.Name = "class_box";
+            this.class_box.Size = new System.Drawing.Size(259, 29);
+            this.class_box.TabIndex = 6;
+            this.class_box.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // find_button
             // 
@@ -161,39 +180,21 @@
             // 
             this.result.AutoScroll = true;
             this.result.BackColor = System.Drawing.Color.LightBlue;
-            this.result.Dock = System.Windows.Forms.DockStyle.Top;
+            this.result.Dock = System.Windows.Forms.DockStyle.Fill;
             this.result.Location = new System.Drawing.Point(0, 200);
             this.result.Margin = new System.Windows.Forms.Padding(6);
             this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(1306, 515);
+            this.result.Size = new System.Drawing.Size(1306, 516);
             this.result.TabIndex = 1;
-            // 
-            // class_box
-            // 
-            this.class_box.Location = new System.Drawing.Point(540, 77);
-            this.class_box.Name = "class_box";
-            this.class_box.Size = new System.Drawing.Size(259, 29);
-            this.class_box.TabIndex = 6;
-            this.class_box.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
-            // class_text
-            // 
-            this.class_text.AutoSize = true;
-            this.class_text.BackColor = System.Drawing.Color.PaleGreen;
-            this.class_text.Location = new System.Drawing.Point(472, 77);
-            this.class_text.Name = "class_text";
-            this.class_text.Size = new System.Drawing.Size(62, 24);
-            this.class_text.TabIndex = 10;
-            this.class_text.Text = "Класс";
-            this.class_text.Click += new System.EventHandler(this.label3_Click);
+            this.result.Resize += new System.EventHandler(this.GDZ_Resize);
             // 
             // GDZform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1306, 776);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.result);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.filters_panel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(6);
