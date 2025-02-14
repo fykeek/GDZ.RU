@@ -26,6 +26,12 @@ namespace GDZ.RU
             subjectLabel.Text = "Предмет: " + sol.subject;
             classLabel.Text = "Класс: " + sol.clas_s;
             priceLabel.Text = "Цена: " + sol.price.ToString();
+
+            try
+            {
+                opisTextBox.Text = System.IO.File.ReadAllText("../../Pictures/" + sol.name + ".txt");
+            }
+            catch (Exception) { }
         }
 
         private void SolutionPic_Click(object sender, EventArgs e)
@@ -34,6 +40,11 @@ namespace GDZ.RU
         }
 
         private void SolutionForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Solutionlabel_Click(object sender, EventArgs e)
         {
 
         }

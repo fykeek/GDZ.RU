@@ -78,6 +78,7 @@
             // 
             this.password_person.Location = new System.Drawing.Point(21, 310);
             this.password_person.Name = "password_person";
+            this.password_person.PasswordChar = '*';
             this.password_person.Size = new System.Drawing.Size(227, 29);
             this.password_person.TabIndex = 7;
             // 
@@ -110,6 +111,7 @@
             // 
             this.return_password.Location = new System.Drawing.Point(21, 401);
             this.return_password.Name = "return_password";
+            this.return_password.PasswordChar = '*';
             this.return_password.Size = new System.Drawing.Size(227, 29);
             this.return_password.TabIndex = 9;
             // 
@@ -131,6 +133,7 @@
             this.reg_button.TabIndex = 10;
             this.reg_button.Text = "Зарегистрироватся";
             this.reg_button.UseVisualStyleBackColor = true;
+            this.reg_button.Click += new System.EventHandler(this.reg_button_Click);
             // 
             // error_text
             // 
@@ -160,7 +163,7 @@
             this.Controls.Add(this.name_person);
             this.Controls.Add(this.text_name);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "RegForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регестрация";

@@ -33,6 +33,7 @@
             this.subjectLabel = new System.Windows.Forms.Label();
             this.classLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
+            this.opisTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.SolutionPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,17 +41,18 @@
             // 
             this.Solutionlabel.AutoSize = true;
             this.Solutionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Solutionlabel.Location = new System.Drawing.Point(35, 270);
+            this.Solutionlabel.Location = new System.Drawing.Point(24, 352);
             this.Solutionlabel.Name = "Solutionlabel";
             this.Solutionlabel.Size = new System.Drawing.Size(70, 25);
             this.Solutionlabel.TabIndex = 0;
             this.Solutionlabel.Text = "label1";
+            this.Solutionlabel.Click += new System.EventHandler(this.Solutionlabel_Click);
             // 
             // SolutionPic
             // 
             this.SolutionPic.Location = new System.Drawing.Point(29, 32);
             this.SolutionPic.Name = "SolutionPic";
-            this.SolutionPic.Size = new System.Drawing.Size(297, 211);
+            this.SolutionPic.Size = new System.Drawing.Size(396, 294);
             this.SolutionPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.SolutionPic.TabIndex = 1;
             this.SolutionPic.TabStop = false;
@@ -60,7 +62,7 @@
             // 
             this.subjectLabel.AutoSize = true;
             this.subjectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.subjectLabel.Location = new System.Drawing.Point(359, 32);
+            this.subjectLabel.Location = new System.Drawing.Point(453, 32);
             this.subjectLabel.Name = "subjectLabel";
             this.subjectLabel.Size = new System.Drawing.Size(70, 25);
             this.subjectLabel.TabIndex = 2;
@@ -70,7 +72,7 @@
             // 
             this.classLabel.AutoSize = true;
             this.classLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.classLabel.Location = new System.Drawing.Point(359, 73);
+            this.classLabel.Location = new System.Drawing.Point(453, 73);
             this.classLabel.Name = "classLabel";
             this.classLabel.Size = new System.Drawing.Size(70, 25);
             this.classLabel.TabIndex = 3;
@@ -80,18 +82,32 @@
             // 
             this.priceLabel.AutoSize = true;
             this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.priceLabel.Location = new System.Drawing.Point(359, 114);
+            this.priceLabel.Location = new System.Drawing.Point(453, 114);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(70, 25);
             this.priceLabel.TabIndex = 4;
             this.priceLabel.Text = "label2";
+            // 
+            // opisTextBox
+            // 
+            this.opisTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.opisTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.opisTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.opisTextBox.Location = new System.Drawing.Point(458, 245);
+            this.opisTextBox.Multiline = true;
+            this.opisTextBox.Name = "opisTextBox";
+            this.opisTextBox.ReadOnly = true;
+            this.opisTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.opisTextBox.Size = new System.Drawing.Size(370, 362);
+            this.opisTextBox.TabIndex = 5;
             // 
             // SolutionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(786, 446);
+            this.ClientSize = new System.Drawing.Size(850, 629);
+            this.Controls.Add(this.opisTextBox);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.classLabel);
             this.Controls.Add(this.subjectLabel);
@@ -114,5 +130,6 @@
         private System.Windows.Forms.Label subjectLabel;
         private System.Windows.Forms.Label classLabel;
         private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.TextBox opisTextBox;
     }
 }

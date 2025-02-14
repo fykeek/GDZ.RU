@@ -31,7 +31,8 @@ namespace GDZ.RU
 
         private void login_Click(object sender, EventArgs e)
         {
-
+            loginForm logForm = new loginForm();
+            logForm.ShowDialog();
         }
 
         private void register_Click(object sender, EventArgs e)

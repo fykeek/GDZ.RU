@@ -22,5 +22,30 @@ namespace GDZ.RU
         {
 
         }
+
+        private void reg_button_Click(object sender, EventArgs e)
+        {
+            if(password_person.Text == return_password.Text)
+            {
+                if (name_person.Text != "" && secondname_person.Text != "" &&
+                    login_person.Text != "" && password_person.Text != "")
+                {
+                    System.IO.File.AppendAllText("../../users/users.txt", name_person.Text + ", " + secondname_person.Text + ", " +
+                                                  login_person.Text + ", " + password_person.Text + Environment.NewLine);
+                    MessageBox.Show("Вы прошли регистрацию!");
+                    Close();
+                }
+                else
+                {
+                    error_text.Visible = true;
+                    error_text.Text = "Не заполнены обязательные поля";
+                }
+            }
+            else if(password_person.Text != return_password.Text)
+            {
+                error_text.Visible = true;
+                error_text.Text = "Пароли не совпадают";
+            }
+        }
     }
 }
