@@ -24,6 +24,7 @@ namespace GDZ.RU
 
         private void secret_Click(object sender, EventArgs e)
         {
+            loginForm.username = "Гость";
             GDZform mainform = new GDZform();
             mainform.ShowDialog();
             

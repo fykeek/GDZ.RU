@@ -45,14 +45,16 @@
             // text_name
             // 
             this.text_name.AutoSize = true;
+            this.text_name.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.text_name.Location = new System.Drawing.Point(17, 19);
             this.text_name.Name = "text_name";
-            this.text_name.Size = new System.Drawing.Size(96, 24);
+            this.text_name.Size = new System.Drawing.Size(96, 20);
             this.text_name.TabIndex = 0;
             this.text_name.Text = "Ваше имя";
             // 
             // name_person
             // 
+            this.name_person.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.name_person.Location = new System.Drawing.Point(21, 55);
             this.name_person.Name = "name_person";
             this.name_person.Size = new System.Drawing.Size(227, 29);
@@ -60,6 +62,7 @@
             // 
             // secondname_person
             // 
+            this.secondname_person.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.secondname_person.Location = new System.Drawing.Point(21, 139);
             this.secondname_person.Name = "secondname_person";
             this.secondname_person.Size = new System.Drawing.Size(227, 29);
@@ -68,14 +71,16 @@
             // secondname_text
             // 
             this.secondname_text.AutoSize = true;
+            this.secondname_text.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.secondname_text.Location = new System.Drawing.Point(17, 103);
             this.secondname_text.Name = "secondname_text";
-            this.secondname_text.Size = new System.Drawing.Size(141, 24);
+            this.secondname_text.Size = new System.Drawing.Size(141, 20);
             this.secondname_text.TabIndex = 2;
             this.secondname_text.Text = "Ваше фамилия";
             // 
             // password_person
             // 
+            this.password_person.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.password_person.Location = new System.Drawing.Point(21, 310);
             this.password_person.Name = "password_person";
             this.password_person.PasswordChar = '*';
@@ -85,14 +90,16 @@
             // password_text
             // 
             this.password_text.AutoSize = true;
+            this.password_text.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.password_text.Location = new System.Drawing.Point(17, 274);
             this.password_text.Name = "password_text";
-            this.password_text.Size = new System.Drawing.Size(115, 24);
+            this.password_text.Size = new System.Drawing.Size(111, 20);
             this.password_text.TabIndex = 6;
             this.password_text.Text = "Ваш пароль";
             // 
             // login_person
             // 
+            this.login_person.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.login_person.Location = new System.Drawing.Point(21, 226);
             this.login_person.Name = "login_person";
             this.login_person.Size = new System.Drawing.Size(227, 29);
@@ -101,14 +108,16 @@
             // login_text
             // 
             this.login_text.AutoSize = true;
+            this.login_text.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.login_text.Location = new System.Drawing.Point(17, 190);
             this.login_text.Name = "login_text";
-            this.login_text.Size = new System.Drawing.Size(103, 24);
+            this.login_text.Size = new System.Drawing.Size(101, 20);
             this.login_text.TabIndex = 4;
             this.login_text.Text = "Ваш логин";
             // 
             // return_password
             // 
+            this.return_password.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.return_password.Location = new System.Drawing.Point(21, 401);
             this.return_password.Name = "return_password";
             this.return_password.PasswordChar = '*';
@@ -118,15 +127,17 @@
             // return_text
             // 
             this.return_text.AutoSize = true;
+            this.return_text.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.return_text.Location = new System.Drawing.Point(17, 365);
             this.return_text.Name = "return_text";
-            this.return_text.Size = new System.Drawing.Size(202, 24);
+            this.return_text.Size = new System.Drawing.Size(205, 20);
             this.return_text.TabIndex = 8;
             this.return_text.Text = "Подтвердите пароль";
             // 
             // reg_button
             // 
             this.reg_button.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.reg_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.reg_button.Location = new System.Drawing.Point(0, 484);
             this.reg_button.Name = "reg_button";
             this.reg_button.Size = new System.Drawing.Size(509, 61);
@@ -138,9 +149,10 @@
             // error_text
             // 
             this.error_text.AutoSize = true;
+            this.error_text.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.error_text.Location = new System.Drawing.Point(17, 446);
             this.error_text.Name = "error_text";
-            this.error_text.Size = new System.Drawing.Size(89, 24);
+            this.error_text.Size = new System.Drawing.Size(109, 20);
             this.error_text.TabIndex = 11;
             this.error_text.Text = "error_text";
             this.error_text.Click += new System.EventHandler(this.label1_Click);

@@ -48,13 +48,12 @@ namespace GDZ.RU
     {
         public static List<solution> solutions = new List<solution>();
 
-        static int count_solution = 0;
         public GDZform()
         {
             InitializeComponent();
 
             solutions.Clear();
-            string[] strs = System.IO.File.ReadAllLines("../../solution.txt");
+            string[] strs = System.IO.File.ReadAllLines("../../Pictures/solution.txt");
 
             foreach (string str in strs)
             {
@@ -62,10 +61,11 @@ namespace GDZ.RU
                 solution solution = new solution(parts[0], parts[1], parts[2], Convert.ToInt32(parts[3]),
                                                  Convert.ToInt32(parts[4]), Convert.ToInt32(parts[5]));
                 solutions.Add(solution);
-                count_solution++;
             }
 
-            nickname.Visible = false;
+            nickname.Text = loginForm.username;
+
+            if(loginForm.admin) { nickname.Text += " Админ"; }
 
         }
 
@@ -74,7 +74,7 @@ namespace GDZ.RU
             int x = 51;
             int y = 0;
             int n = 0;
-            for (int i = 0; i < count_solution; i++)
+            for (int i = 0; i < solutions.Count; i++)
             {
                 solutions[i].picture.Location = new Point(x, 25 + y);
                 solutions[i].picture.Size = new Size(275, 180);
@@ -131,7 +131,7 @@ namespace GDZ.RU
         private void solution_Click(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
-            for(int i = 0; i < count_solution; i++)
+            for(int i = 0; i < solutions.Count; i++)
             {
                 if(pb.Tag == solutions[i].name)
                 {
@@ -166,7 +166,7 @@ namespace GDZ.RU
         {
             int x = 51;
             int y = 0;
-            for (int i = 0; i < count_solution; i++)
+            for (int i = 0; i < solutions.Count; i++)
             {
 
                 solutions[i].picture.Visible = true;
@@ -209,6 +209,27 @@ namespace GDZ.RU
         private void GDZ_Resize(object sender, EventArgs e)
         {
             find_button_Click(null, null);
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            loginForm.username = "Гость";
+            loginForm.admin = false;
+            MessageBox.Show("Вы вышли из аккаунта");
+            Close();
+        }
+
+        private void addSolutiun_Click(object sender, EventArgs e)
+        {
+            if (loginForm.admin)
+            {
+                addForm addform = new addForm();
+                addform.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Недостаточно прав");
+            }
         }
     }
 }

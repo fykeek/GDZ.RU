@@ -30,8 +30,11 @@ namespace GDZ.RU
                 if (name_person.Text != "" && secondname_person.Text != "" &&
                     login_person.Text != "" && password_person.Text != "")
                 {
-                    System.IO.File.AppendAllText("../../users/users.txt", name_person.Text + ", " + secondname_person.Text + ", " +
-                                                  login_person.Text + ", " + password_person.Text + Environment.NewLine);
+                    System.IO.File.AppendAllText("../../users/users.txt", name_person.Text + ", " +
+                                                                    secondname_person.Text + ", " +
+                                                                    login_person.Text + ", " +
+                                                                    password_person.Text + ", user" +
+                                                                    Environment.NewLine);
                     MessageBox.Show("Вы прошли регистрацию!");
                     Close();
                 }

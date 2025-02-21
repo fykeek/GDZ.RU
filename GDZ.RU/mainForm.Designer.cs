@@ -65,6 +65,7 @@
             // 
             // logo
             // 
+            this.logo.BackColor = System.Drawing.Color.White;
             this.logo.Controls.Add(this.pictureBox1);
             this.logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.logo.Location = new System.Drawing.Point(0, 141);
@@ -96,11 +97,12 @@
             // 
             // secret
             // 
-            this.secret.Location = new System.Drawing.Point(426, 24);
+            this.secret.Font = new System.Drawing.Font("asinastra", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.secret.Location = new System.Drawing.Point(426, 18);
             this.secret.Name = "secret";
-            this.secret.Size = new System.Drawing.Size(174, 53);
+            this.secret.Size = new System.Drawing.Size(174, 148);
             this.secret.TabIndex = 2;
-            this.secret.Text = "secret_Button";
+            this.secret.Text = "Войти как гость";
             this.secret.UseVisualStyleBackColor = true;
             this.secret.Click += new System.EventHandler(this.secret_Click);
             // 
@@ -138,7 +140,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "  ";
+            this.Text = "Главная страница";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.web.ResumeLayout(false);
             this.web.PerformLayout();
