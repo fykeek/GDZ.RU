@@ -16,5 +16,44 @@ namespace GDZ.RU
         {
             InitializeComponent();
         }
+
+        private void addForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void add_button_Click(object sender, EventArgs e)
+        {
+            if (name_TB.Text == "" || subject_CB.Text == "" || class_TB.Text == "" || price_NU.Value == 0 ||
+                class_min.Value <= 0 || class_max.Value > 11 || class_max.Value == 0 || FileName == "")
+            {
+                MessageBox.Show("Не введены все данные, картинка или класс не входит в промежуток 1-11");
+                return;
+            }
+            else
+            {
+                System.IO.File.AppendAllText("../../Pictures/solution.txt", Environment.NewLine +
+                                                                            name_TB.Text + ", " +
+                                                                            subject_CB.Text + ", " +
+                                                                            class_TB.Text + ", " +
+                                                                            price_NU.Value + ", " +
+                                                                            class_min.Value + ", " +
+                                                                            class_max.Value);
+                System.IO.File.Copy(FileName, "../../Pictures/" + name_TB.Text + ".jpg");
+                MessageBox.Show("Вы добавили задачу. Чтобы она появилась войдите в аккаунт заново");
+                Close();
+            }
+        }
+
+        string FileName = "";
+
+        private void load_button_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                FileName = openFileDialog1.FileName;
+                pictureBox1.Load(FileName);
+            }
+        }
     }
 }
