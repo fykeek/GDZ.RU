@@ -65,7 +65,15 @@ namespace GDZ.RU
 
             nickname.Text = loginForm.username;
 
-            if(loginForm.admin) { nickname.Text += " Админ"; }
+            if(loginForm.admin)
+            {
+                nickname.Text += " Админ";
+                help_button.Visible = true;
+            }
+            else
+            {
+                help_button.Visible = false;
+            }
 
         }
 
@@ -230,6 +238,12 @@ namespace GDZ.RU
             {
                 MessageBox.Show("Недостаточно прав");
             }
+        }
+
+        private void help_Click(object sender, EventArgs e)
+        {
+            HelpForm helpform = new HelpForm();
+            helpform.Show();
         }
     }
 }

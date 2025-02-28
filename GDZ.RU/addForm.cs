@@ -22,6 +22,8 @@ namespace GDZ.RU
 
         }
 
+        string FileName = "";
+
         private void add_button_Click(object sender, EventArgs e)
         {
             if (name_TB.Text == "" || subject_CB.Text == "" || class_TB.Text == "" || price_NU.Value == 0 ||
@@ -44,8 +46,6 @@ namespace GDZ.RU
                 Close();
             }
         }
-
-        string FileName = "";
 
         private void load_button_Click(object sender, EventArgs e)
         {

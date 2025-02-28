@@ -39,6 +39,7 @@
             this.write_name_ans = new System.Windows.Forms.TextBox();
             this.hide_filters = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.help_button = new System.Windows.Forms.Button();
             this.exit_account = new System.Windows.Forms.Button();
             this.nickname = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -169,6 +170,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.help_button);
             this.panel1.Controls.Add(this.exit_account);
             this.panel1.Controls.Add(this.nickname);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -177,6 +179,17 @@
             this.panel1.Size = new System.Drawing.Size(1306, 82);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // help_button
+            // 
+            this.help_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.help_button.Location = new System.Drawing.Point(1084, 9);
+            this.help_button.Name = "help_button";
+            this.help_button.Size = new System.Drawing.Size(160, 61);
+            this.help_button.TabIndex = 2;
+            this.help_button.Text = "Справочник для админа";
+            this.help_button.UseVisualStyleBackColor = true;
+            this.help_button.Click += new System.EventHandler(this.help_Click);
             // 
             // exit_account
             // 
@@ -233,12 +246,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addSolutiun});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 26);
             // 
             // addSolutiun
             // 
             this.addSolutiun.Name = "addSolutiun";
-            this.addSolutiun.Size = new System.Drawing.Size(180, 22);
+            this.addSolutiun.Size = new System.Drawing.Size(178, 22);
             this.addSolutiun.Text = "Добавить задачку";
             this.addSolutiun.Click += new System.EventHandler(this.addSolutiun_Click);
             // 
@@ -286,5 +299,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem addSolutiun;
+        private System.Windows.Forms.Button help_button;
     }
 }
