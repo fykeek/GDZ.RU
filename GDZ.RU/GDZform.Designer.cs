@@ -128,11 +128,13 @@
             "Литиратура",
             "Алгебра",
             "Физика",
-            "Геометрия"});
+            "Геометрия",
+            "Английский"});
             this.comboBox_subject.Location = new System.Drawing.Point(176, 112);
             this.comboBox_subject.Name = "comboBox_subject";
             this.comboBox_subject.Size = new System.Drawing.Size(163, 28);
             this.comboBox_subject.TabIndex = 3;
+            this.comboBox_subject.Text = "  ";
             this.comboBox_subject.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // name_ans
