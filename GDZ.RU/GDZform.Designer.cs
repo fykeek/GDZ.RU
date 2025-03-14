@@ -48,6 +48,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addSolutiun = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteSolution = new System.Windows.Forms.ToolStripMenuItem();
             this.filters_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -246,16 +247,24 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addSolutiun});
+            this.addSolutiun,
+            this.deleteSolution});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // addSolutiun
             // 
             this.addSolutiun.Name = "addSolutiun";
-            this.addSolutiun.Size = new System.Drawing.Size(178, 22);
+            this.addSolutiun.Size = new System.Drawing.Size(180, 22);
             this.addSolutiun.Text = "Добавить задачку";
             this.addSolutiun.Click += new System.EventHandler(this.addSolutiun_Click);
+            // 
+            // deleteSolution
+            // 
+            this.deleteSolution.Name = "deleteSolution";
+            this.deleteSolution.Size = new System.Drawing.Size(180, 22);
+            this.deleteSolution.Text = "Удалить задачу";
+            this.deleteSolution.Click += new System.EventHandler(this.deleteSolution_Click);
             // 
             // GDZform
             // 
@@ -302,5 +311,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem addSolutiun;
         private System.Windows.Forms.Button help_button;
+        private System.Windows.Forms.ToolStripMenuItem deleteSolution;
     }
 }

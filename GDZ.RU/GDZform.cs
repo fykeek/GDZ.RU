@@ -245,5 +245,18 @@ namespace GDZ.RU
             HelpForm helpform = new HelpForm();
             helpform.Show();
         }
+
+        private void deleteSolution_Click(object sender, EventArgs e)
+        {
+            if (loginForm.admin)
+            {
+                delForm deleForm = new delForm();
+                deleForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Недостаточно прав");
+            }
+        }
     }
 }

@@ -34,13 +34,13 @@ namespace GDZ.RU
             }
             else
             {
-                System.IO.File.AppendAllText("../../Pictures/solution.txt", Environment.NewLine +
-                                                                            name_TB.Text + ", " +
+                System.IO.File.AppendAllText("../../Pictures/solution.txt", name_TB.Text + ", " +
                                                                             subject_CB.Text + ", " +
                                                                             class_TB.Text + ", " +
                                                                             price_NU.Value + ", " +
                                                                             class_min.Value + ", " +
-                                                                            class_max.Value);
+                                                                            class_max.Value + 
+                                                                            Environment.NewLine);
                 System.IO.File.Copy(FileName, "../../Pictures/" + name_TB.Text + ".jpg");
                 MessageBox.Show("Вы добавили задачу. Чтобы она появилась войдите в аккаунт заново");
                 Close();
