@@ -231,6 +231,7 @@
             this.result.Name = "result";
             this.result.Size = new System.Drawing.Size(1306, 525);
             this.result.TabIndex = 1;
+            this.result.Paint += new System.Windows.Forms.PaintEventHandler(this.result_Paint);
             this.result.Resize += new System.EventHandler(this.GDZ_Resize);
             // 
             // toolStripComboBox1
@@ -250,19 +251,19 @@
             this.addSolutiun,
             this.deleteSolution});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 48);
             // 
             // addSolutiun
             // 
             this.addSolutiun.Name = "addSolutiun";
-            this.addSolutiun.Size = new System.Drawing.Size(180, 22);
+            this.addSolutiun.Size = new System.Drawing.Size(178, 22);
             this.addSolutiun.Text = "Добавить задачку";
             this.addSolutiun.Click += new System.EventHandler(this.addSolutiun_Click);
             // 
             // deleteSolution
             // 
             this.deleteSolution.Name = "deleteSolution";
-            this.deleteSolution.Size = new System.Drawing.Size(180, 22);
+            this.deleteSolution.Size = new System.Drawing.Size(178, 22);
             this.deleteSolution.Text = "Удалить задачу";
             this.deleteSolution.Click += new System.EventHandler(this.deleteSolution_Click);
             // 

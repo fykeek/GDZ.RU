@@ -75,13 +75,8 @@ namespace GDZ.RU
                 help_button.Visible = false;
             }
 
-        }
-
-        public void GDZform_load(object sender, EventArgs e)
-        {
             int x = 51;
             int y = 0;
-            int n = 0;
             for (int i = 0; i < solutions.Count; i++)
             {
                 solutions[i].picture.Location = new Point(x, 25 + y);
@@ -95,7 +90,6 @@ namespace GDZ.RU
                 result.Controls.Add(solutions[i].label);
 
                 x += 295;
-                n++;
                 if (x + 295 > result.Width)
                 {
                     y += 260;
@@ -103,6 +97,33 @@ namespace GDZ.RU
                 }
 
             }
+
+        }
+
+        public void GDZform_load(object sender, EventArgs e)
+        {
+            /*int x = 51;
+            int y = 0;
+            for (int i = 0; i < solutions.Count; i++)
+            {
+                solutions[i].picture.Location = new Point(x, 25 + y);
+                solutions[i].picture.Size = new Size(275, 180);
+                solutions[i].picture.SizeMode = PictureBoxSizeMode.Zoom;
+                solutions[i].picture.Click += new EventHandler(solution_Click);
+                result.Controls.Add(solutions[i].picture);
+
+                solutions[i].label.Location = new Point(x + 25, 220 + y);
+                solutions[i].label.Size = new Size(275, 25);
+                result.Controls.Add(solutions[i].label);
+
+                x += 295;
+                if (x + 295 > result.Width)
+                {
+                    y += 260;
+                    x = 30;
+                }
+
+            }*/
 
         }
 
@@ -257,6 +278,11 @@ namespace GDZ.RU
             {
                 MessageBox.Show("Недостаточно прав");
             }
+        }
+
+        private void result_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
