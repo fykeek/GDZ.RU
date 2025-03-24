@@ -15,27 +15,28 @@ namespace GDZ.RU
     public partial class SolutionForm : System.Windows.Forms.Form
     {
         string solut = "";
+        solution sol;
 
-        public SolutionForm(solution sol)
+        public SolutionForm(solution _sol)
         {
             InitializeComponent();
 
-            
+            sol = _sol;
 
-            Solutionlabel.Text = sol.name;
+            Solutionlabel.Text = _sol.name;
             try
             {
-                SolutionPic.Load("../../Pictures/" + sol.name + ".jpg");
+                SolutionPic.Load("../../Pictures/" + _sol.name + ".jpg");
             }
             catch (Exception) { }
-            Text = sol.name;
-            subjectLabel.Text = "Предмет: " + sol.subject;
-            classLabel.Text = "Класс: " + sol.clas_s;
-            priceLabel.Text = "Цена: " + sol.price.ToString();
+            Text = _sol.name;
+            subjectLabel.Text = "Предмет: " + _sol.subject;
+            classLabel.Text = "Класс: " + _sol.clas_s;
+            priceLabel.Text = "Цена: " + _sol.price.ToString();
 
             try
             {
-                opisTextBox.Text = System.IO.File.ReadAllText("../../Pictures/" + sol.name + ".txt");
+                opisTextBox.Text = System.IO.File.ReadAllText("../../Pictures/" + _sol.name + ".txt");
             }
             catch (Exception) { }
 
@@ -58,7 +59,7 @@ namespace GDZ.RU
                 price_TextBox.Visible = false;
             }
 
-            solut = sol.name;
+            solut = _sol.name;
         }
 
         private void SolutionPic_Click(object sender, EventArgs e)
@@ -95,6 +96,11 @@ namespace GDZ.RU
                     parts[3] = price_TextBox.Text;
                 }
             }*/
+        }
+
+        private void select_button_Click(object sender, EventArgs e)
+        {
+            likeForm.select_solutions.Add(sol);
         }
     }
 }

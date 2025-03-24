@@ -75,8 +75,14 @@ namespace GDZ.RU
                 help_button.Visible = false;
             }
 
-            
-
+            if (loginForm.username != "Гость")
+            {
+                like_button.Visible = true;
+            }
+            else 
+            {
+                like_button.Visible = false;
+            }
         }
 
         public void GDZform_load(object sender, EventArgs e)
@@ -257,6 +263,12 @@ namespace GDZ.RU
             {
                 MessageBox.Show("Недостаточно прав");
             }
+        }
+
+        private void like_button_Click(object sender, EventArgs e)
+        {
+            likeForm likeForm = new likeForm();
+            likeForm.Show();
         }
     }
 }

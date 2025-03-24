@@ -39,6 +39,7 @@
             this.sol_replase = new System.Windows.Forms.Button();
             this.class_TextBox = new System.Windows.Forms.TextBox();
             this.subject_TextBox = new System.Windows.Forms.TextBox();
+            this.select_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SolutionPic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +99,7 @@
             this.opisTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.opisTextBox.Font = new System.Drawing.Font("asinastra", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.opisTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.opisTextBox.Location = new System.Drawing.Point(458, 245);
+            this.opisTextBox.Location = new System.Drawing.Point(458, 244);
             this.opisTextBox.Multiline = true;
             this.opisTextBox.Name = "opisTextBox";
             this.opisTextBox.ReadOnly = true;
@@ -111,7 +112,7 @@
             this.rename_opis.BackColor = System.Drawing.Color.Gray;
             this.rename_opis.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rename_opis.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rename_opis.Location = new System.Drawing.Point(282, 506);
+            this.rename_opis.Location = new System.Drawing.Point(283, 402);
             this.rename_opis.Name = "rename_opis";
             this.rename_opis.Size = new System.Drawing.Size(142, 100);
             this.rename_opis.TabIndex = 6;
@@ -153,12 +154,25 @@
             this.subject_TextBox.Size = new System.Drawing.Size(157, 20);
             this.subject_TextBox.TabIndex = 10;
             // 
+            // select_button
+            // 
+            this.select_button.BackColor = System.Drawing.Color.PaleGreen;
+            this.select_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.select_button.Location = new System.Drawing.Point(29, 527);
+            this.select_button.Name = "select_button";
+            this.select_button.Size = new System.Drawing.Size(396, 79);
+            this.select_button.TabIndex = 11;
+            this.select_button.Text = "В корзину";
+            this.select_button.UseVisualStyleBackColor = false;
+            this.select_button.Click += new System.EventHandler(this.select_button_Click);
+            // 
             // SolutionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(850, 629);
+            this.Controls.Add(this.select_button);
             this.Controls.Add(this.subject_TextBox);
             this.Controls.Add(this.class_TextBox);
             this.Controls.Add(this.sol_replase);
@@ -193,5 +207,6 @@
         private System.Windows.Forms.Button sol_replase;
         private System.Windows.Forms.TextBox class_TextBox;
         private System.Windows.Forms.TextBox subject_TextBox;
+        private System.Windows.Forms.Button select_button;
     }
 }
