@@ -52,17 +52,6 @@ namespace GDZ.RU
         {
             InitializeComponent();
 
-            solutions.Clear();
-            string[] strs = System.IO.File.ReadAllLines("../../Pictures/solution.txt");
-
-            foreach (string str in strs)
-            {
-                string[] parts = str.Split(new string[] {", "}, StringSplitOptions.None);
-                solution solution = new solution(parts[0], parts[1], parts[2], Convert.ToInt32(parts[3]),
-                                                 Convert.ToInt32(parts[4]), Convert.ToInt32(parts[5]));
-                solutions.Add(solution);
-            }
-
             nickname.Text = loginForm.username;
 
             if(loginForm.admin)
@@ -87,6 +76,18 @@ namespace GDZ.RU
 
         public void GDZform_load(object sender, EventArgs e)
         {
+            solutions.Clear();
+            string[] strs = System.IO.File.ReadAllLines("../../Pictures/solution.txt");
+
+            foreach (string str in strs)
+            {
+                string[] parts = str.Split(new string[] { ", " }, StringSplitOptions.None);
+                solution solutio = new solution(parts[0], parts[1], parts[2], Convert.ToInt32(parts[3]),
+                                                 Convert.ToInt32(parts[4]), Convert.ToInt32(parts[5]));
+                solutions.Add(solutio);
+            }
+            result.Controls.Clear();
+
             int x = 51;
             int y = 0;
             for (int i = 0; i < solutions.Count; i++)
@@ -244,6 +245,7 @@ namespace GDZ.RU
             {
                 MessageBox.Show("Недостаточно прав");
             }
+            GDZform_load(null, null);
         }
 
         private void help_Click(object sender, EventArgs e)
@@ -257,18 +259,19 @@ namespace GDZ.RU
             if (loginForm.admin)
             {
                 delForm deleForm = new delForm();
-                deleForm.Show();
+                deleForm.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Недостаточно прав");
             }
+            GDZform_load(null, null);
         }
 
         private void like_button_Click(object sender, EventArgs e)
         {
             likeForm likeForm = new likeForm();
-            likeForm.Show();
+            likeForm.ShowDialog();
         }
     }
 }

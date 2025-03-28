@@ -49,10 +49,10 @@ namespace GDZ.RU
                                                                                     GDZform.solutions[i].from_class + ", " +
                                                                                     GDZform.solutions[i].to_class +
                                                                                     Environment.NewLine);
-                        MessageBox.Show("Вы удалили задачу. Чтобы она исчезла войдите в аккаунт заново");
-                        Close();
                     }
                 }
+                MessageBox.Show("Вы удалили задачу");
+                Close();
             }
         }
     }

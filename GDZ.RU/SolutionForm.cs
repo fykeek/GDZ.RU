@@ -100,7 +100,14 @@ namespace GDZ.RU
 
         private void select_button_Click(object sender, EventArgs e)
         {
-            likeForm.select_solutions.Add(sol);
+            if (likeForm.select_solutions.ContainsKey(sol))
+            {
+                likeForm.select_solutions[sol]++;
+            }
+            else
+            {
+                likeForm.select_solutions.Add(sol, 1);
+            }
         }
     }
 }
