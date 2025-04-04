@@ -39,6 +39,7 @@
             this.write_name_ans = new System.Windows.Forms.TextBox();
             this.hide_filters = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.like_button = new System.Windows.Forms.Button();
             this.help_button = new System.Windows.Forms.Button();
             this.exit_account = new System.Windows.Forms.Button();
             this.nickname = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addSolutiun = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteSolution = new System.Windows.Forms.ToolStripMenuItem();
-            this.like_button = new System.Windows.Forms.Button();
             this.filters_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -185,6 +185,17 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // like_button
+            // 
+            this.like_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.like_button.Location = new System.Drawing.Point(1087, 9);
+            this.like_button.Name = "like_button";
+            this.like_button.Size = new System.Drawing.Size(207, 61);
+            this.like_button.TabIndex = 3;
+            this.like_button.Text = "Корзина";
+            this.like_button.UseVisualStyleBackColor = true;
+            this.like_button.Click += new System.EventHandler(this.like_button_Click);
+            // 
             // help_button
             // 
             this.help_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -233,6 +244,7 @@
             this.result.Name = "result";
             this.result.Size = new System.Drawing.Size(1306, 525);
             this.result.TabIndex = 1;
+            this.result.Paint += new System.Windows.Forms.PaintEventHandler(this.result_Paint);
             // 
             // toolStripComboBox1
             // 
@@ -266,17 +278,6 @@
             this.deleteSolution.Size = new System.Drawing.Size(178, 22);
             this.deleteSolution.Text = "Удалить задачу";
             this.deleteSolution.Click += new System.EventHandler(this.deleteSolution_Click);
-            // 
-            // like_button
-            // 
-            this.like_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.like_button.Location = new System.Drawing.Point(1087, 9);
-            this.like_button.Name = "like_button";
-            this.like_button.Size = new System.Drawing.Size(207, 61);
-            this.like_button.TabIndex = 3;
-            this.like_button.Text = "Корзина";
-            this.like_button.UseVisualStyleBackColor = true;
-            this.like_button.Click += new System.EventHandler(this.like_button_Click);
             // 
             // GDZform
             // 

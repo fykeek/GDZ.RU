@@ -155,7 +155,7 @@ namespace GDZ.RU
                     break;
                 }
             }
-            ;
+            
         }
 
         private void hide_Click(object sender, EventArgs e)
@@ -272,6 +272,11 @@ namespace GDZ.RU
         {
             likeForm likeForm = new likeForm();
             likeForm.ShowDialog();
+        }
+
+        private void result_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

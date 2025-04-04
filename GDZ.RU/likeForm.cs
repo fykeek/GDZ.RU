@@ -24,24 +24,121 @@ namespace GDZ.RU
             {
                 solution select_sol = select_sol_.Key;
 
+                #region 1 столбец - Картинка
                 PictureBox pic = new PictureBox();
                 pic.Location = new Point(x, 25 + y);
                 pic.Size = new Size(275, 180);
                 pic.SizeMode = PictureBoxSizeMode.Zoom;
                 pic.Image = select_sol.picture.Image;
                 Controls.Add(pic);
+                #endregion
+                
+                #region 2 столбец - Характеристика
+                Label name_lbl = new Label();
+                name_lbl.Location = new Point(x + 300, y + 30);
+                name_lbl.Size = new Size(400, 30);
+                name_lbl.Text = "Название: " + select_sol_.Key.name;
+                Controls.Add(name_lbl);
 
-                Label lbl = new Label();
-                lbl.Location = new Point(x + 300, y + 120);
-                lbl.Size = new Size(275, 30);
-                lbl.Text = "Кол-во:" + select_sol_.Value.ToString();
-                Controls.Add(lbl);
+                Label sub_lbl = new Label();
+                sub_lbl.Location = new Point(x + 300, y + 60);
+                sub_lbl.Size = new Size(300, 30);
+                sub_lbl.Text = "Категория: " + select_sol_.Key.subject;
+                Controls.Add(sub_lbl);
+
+                Label class_lbl = new Label();
+                class_lbl.Location = new Point(x + 300, y + 90);
+                class_lbl.Size = new Size(275, 30);
+                class_lbl.Text = "Класс: " + select_sol_.Key.clas_s;
+                Controls.Add(class_lbl);
+
+                Label price_lbl = new Label();
+                price_lbl.Location = new Point(x + 300, y + 120);
+                price_lbl.Size = new Size(275, 30);
+                price_lbl.Text = "Цена: " + select_sol_.Key.price.ToString();
+                Controls.Add(price_lbl);
+
+                Button opis_bt = new Button();
+                opis_bt.Location = new Point(x + 300, y + 160);
+                opis_bt.Size = new Size(300, 50);
+                opis_bt.Text = "К описанию";
+                opis_bt.Tag = name_lbl.Text;
+                opis_bt.Click += new EventHandler(solution_Click);
+                Controls.Add(opis_bt);
+                #endregion
+
+                #region 3 столбец - кол-во
+                Label kol_lbl = new Label();
+                kol_lbl.Location = new Point(x + 700, y + 30);
+                kol_lbl.Size = new Size(275, 30);
+                kol_lbl.Text = "Количество:";
+                Controls.Add(kol_lbl);
+
+                NumericUpDown kol = new NumericUpDown();
+                kol.Location = new Point(x + 700, y + 60);
+                kol.Size = new Size(75, 20);
+                kol.Value = select_sol_.Value;
+                kol.ValueChanged += new EventHandler(count_changed);
+                Controls.Add(kol);
+
+                Label sto_lbl = new Label();
+                sto_lbl.Location = new Point(x + 700, y + 90);
+                sto_lbl.Size = new Size(275, 30);
+                sto_lbl.Text = "Стоимость: " + (select_sol_.Key.price * kol.Value).ToString();
+                Controls.Add(sto_lbl);
+                #endregion
+
+                #region 4 столбец - удаление
+                #endregion
 
                 y += 260;
 
             }
         }
 
+        private void count_changed(object sender, EventArgs e)
+        {
+            NumericUpDown num = (NumericUpDown)sender;
+
+            for(int i = 0; i < select_solutions.Count; i++)
+            {
+                if(num.Location == new Point(751, 260*i + 60 + AutoScrollPosition.Y))
+                {
+                    int price = 0;
+
+                    foreach(Control ctrl in Controls)
+                    {
+                        if(ctrl is Label && ctrl.Location == new Point(351, 260 * i + 120 + AutoScrollPosition.Y))
+                        {
+                            price = Convert.ToInt32(ctrl.Text.Replace("Цена: ", ""));
+                        }
+                    }
+
+                    foreach (Control ctrl in Controls)
+                    {
+                        if (ctrl is Label && ctrl.Location == new Point(751, 260 * i + 90 + AutoScrollPosition.Y))
+                        {
+                            ctrl.Text = "Стоимость: " + (price * num.Value).ToString();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void solution_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            foreach(KeyValuePair<solution, int> select in select_solutions)
+            {
+                if (btn.Tag.ToString() == select.Key.name)
+                {
+                    SolutionForm solutionForm = new SolutionForm(select.Key);
+                    solutionForm.Show();
+                    break;
+                }
+            }
+
+        }
         private void likeForm_Load(object sender, EventArgs e)
         {
 
