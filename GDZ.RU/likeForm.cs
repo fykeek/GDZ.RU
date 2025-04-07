@@ -13,13 +13,17 @@ namespace GDZ.RU
     public partial class likeForm : Form
     {
         public static Dictionary<solution, int> select_solutions = new Dictionary<solution, int>();
+        int totalPrice = 0;
 
         public likeForm()
         {
             InitializeComponent();
 
+            Calculate();
+            label1.Text = "Итоговая стоимость: " + totalPrice.ToString();
+
             int x = 51;
-            int y = 0;
+            int y = 150;
             foreach(KeyValuePair<solution, int> select_sol_ in select_solutions)
             {
                 solution select_sol = select_sol_.Key;
@@ -102,13 +106,15 @@ namespace GDZ.RU
 
             for(int i = 0; i < select_solutions.Count; i++)
             {
-                if(num.Location == new Point(751, 260*i + 60 + AutoScrollPosition.Y))
+
+                if(num.Location == new Point(751, 260*i + 210 + AutoScrollPosition.Y))
                 {
                     int price = 0;
+                    String name = "";
 
                     foreach(Control ctrl in Controls)
                     {
-                        if(ctrl is Label && ctrl.Location == new Point(351, 260 * i + 120 + AutoScrollPosition.Y))
+                        if(ctrl is Label && ctrl.Location == new Point(351, 260 * i + 270 + AutoScrollPosition.Y))
                         {
                             price = Convert.ToInt32(ctrl.Text.Replace("Цена: ", ""));
                         }
@@ -116,13 +122,31 @@ namespace GDZ.RU
 
                     foreach (Control ctrl in Controls)
                     {
-                        if (ctrl is Label && ctrl.Location == new Point(751, 260 * i + 90 + AutoScrollPosition.Y))
+                        if (ctrl is Label && ctrl.Location == new Point(751, 260 * i + 240 + AutoScrollPosition.Y))
                         {
                             ctrl.Text = "Стоимость: " + (price * num.Value).ToString();
                         }
                     }
+                
+                    foreach(Control ctrl in Controls)
+                    {
+                        if(ctrl is Label && ctrl.Location == new Point(351, 260 * i + 180 + AutoScrollPosition.Y))
+                        {
+                            name = ctrl.Text.Replace("Название: ", "");
+                        }
+                    }
+
+                    foreach(solution sol in GDZform.solutions)
+                    {
+                        if(sol.name == name)
+                        {
+                            select_solutions[sol] = Convert.ToInt32(num.Value);
+                        }
+                    }
                 }
             }
+            Calculate();
+            label1.Text = "Итоговая стоимость: " + totalPrice.ToString();
         }
 
         private void solution_Click(object sender, EventArgs e)
@@ -142,6 +166,16 @@ namespace GDZ.RU
         private void likeForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        void Calculate()
+        {
+            totalPrice = 0;
+
+            foreach(KeyValuePair<solution, int> select in select_solutions)
+            {
+                totalPrice += select.Value * select.Key.price;
+            }
         }
     }
 }

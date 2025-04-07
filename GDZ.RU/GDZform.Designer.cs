@@ -245,7 +245,6 @@
             this.result.Size = new System.Drawing.Size(1306, 525);
             this.result.TabIndex = 1;
             this.result.Paint += new System.Windows.Forms.PaintEventHandler(this.result_Paint);
-            this.result.Resize += new System.EventHandler(this.GDZ_Resize);
             // 
             // toolStripComboBox1
             // 
