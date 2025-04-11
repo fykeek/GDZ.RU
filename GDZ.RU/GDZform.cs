@@ -57,11 +57,11 @@ namespace GDZ.RU
             if(loginForm.admin)
             {
                 nickname.Text += " Админ";
-                help_button.Visible = true;
+                help_button.Text = "Справочник для администратора";
             }
             else
             {
-                help_button.Visible = false;
+                help_button.Text = "Справочник для пользователя";
             }
 
             if (loginForm.username != "Гость")
@@ -236,7 +236,7 @@ namespace GDZ.RU
 
         private void addSolutiun_Click(object sender, EventArgs e)
         {
-            if (loginForm.admin)
+            if(loginForm.admin)
             {
                 addForm addform = new addForm();
                 addform.ShowDialog();
@@ -256,7 +256,7 @@ namespace GDZ.RU
 
         private void deleteSolution_Click(object sender, EventArgs e)
         {
-            if (loginForm.admin)
+            if(loginForm.admin)
             {
                 delForm deleForm = new delForm();
                 deleForm.ShowDialog();
