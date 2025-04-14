@@ -13,6 +13,7 @@ namespace GDZ.RU
     public partial class likeForm : Form
     {
         public static Dictionary<solution, int> select_solutions = new Dictionary<solution, int>();
+
         int totalPrice = 0;
 
         public likeForm()
@@ -93,6 +94,11 @@ namespace GDZ.RU
                 #endregion
 
                 #region 4 столбец - удаление
+                Button btn_del = new Button();
+                btn_del.Location = new Point(x + 1200, y + 30);
+                btn_del.Size = new Size(300, 50);
+                btn_del.Text = "Удалить";
+                btn_del.Click += new EventHandler(delCLick);
                 #endregion
 
                 y += 260;
@@ -176,6 +182,28 @@ namespace GDZ.RU
             {
                 totalPrice += select.Value * select.Key.price;
             }
+        }
+    
+        private void delCLick(object sender, EventArgs e)
+        {
+            int i = 0;
+            Dictionary<solution, int> selSol = new Dictionary<solution, int>();
+            Button btn = (Button)sender;
+            foreach(KeyValuePair<solution, int> selectSol1 in select_solutions)
+            {
+                solution select_sol = selectSol1.Key;
+                if(btn.Location == new Point(1251, 260 * i + 30 + AutoScrollPosition.Y))
+                {
+                
+                }
+                else
+                {
+                    selSol[selectSol1.Key] = selectSol1.Value;
+                }
+                i++;
+            }
+            select_solutions = selSol;
+            ReDraw();
         }
     }
 }
