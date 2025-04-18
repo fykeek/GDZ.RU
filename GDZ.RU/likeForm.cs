@@ -20,12 +20,19 @@ namespace GDZ.RU
         {
             InitializeComponent();
 
+            ReDraw();
+        }
+
+        void ReDraw()
+        {   
+            Controls.Clear();
+            Controls.Add(label1);
             Calculate();
             label1.Text = "Итоговая стоимость: " + totalPrice.ToString();
 
             int x = 51;
             int y = 150;
-            foreach(KeyValuePair<solution, int> select_sol_ in select_solutions)
+            foreach (KeyValuePair<solution, int> select_sol_ in select_solutions)
             {
                 solution select_sol = select_sol_.Key;
 
@@ -37,7 +44,7 @@ namespace GDZ.RU
                 pic.Image = select_sol.picture.Image;
                 Controls.Add(pic);
                 #endregion
-                
+
                 #region 2 столбец - Характеристика
                 Label name_lbl = new Label();
                 name_lbl.Location = new Point(x + 300, y + 30);
@@ -95,10 +102,11 @@ namespace GDZ.RU
 
                 #region 4 столбец - удаление
                 Button btn_del = new Button();
-                btn_del.Location = new Point(x + 1200, y + 30);
+                btn_del.Location = new Point(x + 700, y + 130);
                 btn_del.Size = new Size(300, 50);
                 btn_del.Text = "Удалить";
                 btn_del.Click += new EventHandler(delCLick);
+                Controls.Add(btn_del);
                 #endregion
 
                 y += 260;
@@ -192,7 +200,7 @@ namespace GDZ.RU
             foreach(KeyValuePair<solution, int> selectSol1 in select_solutions)
             {
                 solution select_sol = selectSol1.Key;
-                if(btn.Location == new Point(1251, 260 * i + 30 + AutoScrollPosition.Y))
+                if(btn.Location == new Point(751, 260 * i + 280 + AutoScrollPosition.Y))
                 {
                 
                 }

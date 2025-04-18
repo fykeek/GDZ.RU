@@ -199,9 +199,9 @@
             // help_button
             // 
             this.help_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.help_button.Location = new System.Drawing.Point(899, 9);
+            this.help_button.Location = new System.Drawing.Point(819, 9);
             this.help_button.Name = "help_button";
-            this.help_button.Size = new System.Drawing.Size(160, 61);
+            this.help_button.Size = new System.Drawing.Size(240, 61);
             this.help_button.TabIndex = 2;
             this.help_button.Text = "Справочник для админа";
             this.help_button.UseVisualStyleBackColor = true;

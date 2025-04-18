@@ -15,6 +15,15 @@ namespace GDZ.RU
         public HelpForm()
         {
             InitializeComponent();
+
+            if (loginForm.admin)
+            {
+                label1.Text = System.IO.File.ReadAllText("../../helptext/helpadmin.txt");
+            }
+            else
+            {
+                label1.Text = "you are moshonka";
+            }
         }
 
         private void HelpForm_Load(object sender, EventArgs e)
