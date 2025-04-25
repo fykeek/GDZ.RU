@@ -50,6 +50,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addSolutiun = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteSolution = new System.Windows.Forms.ToolStripMenuItem();
+            this.feedback_button = new System.Windows.Forms.Button();
             this.filters_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -174,6 +175,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.feedback_button);
             this.panel1.Controls.Add(this.like_button);
             this.panel1.Controls.Add(this.help_button);
             this.panel1.Controls.Add(this.exit_account);
@@ -199,7 +201,7 @@
             // help_button
             // 
             this.help_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.help_button.Location = new System.Drawing.Point(819, 9);
+            this.help_button.Location = new System.Drawing.Point(831, 9);
             this.help_button.Name = "help_button";
             this.help_button.Size = new System.Drawing.Size(240, 61);
             this.help_button.TabIndex = 2;
@@ -279,6 +281,17 @@
             this.deleteSolution.Text = "Удалить задачу";
             this.deleteSolution.Click += new System.EventHandler(this.deleteSolution_Click);
             // 
+            // feedback_button
+            // 
+            this.feedback_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.feedback_button.Location = new System.Drawing.Point(608, 9);
+            this.feedback_button.Name = "feedback_button";
+            this.feedback_button.Size = new System.Drawing.Size(207, 61);
+            this.feedback_button.TabIndex = 4;
+            this.feedback_button.Text = "Обратная связь";
+            this.feedback_button.UseVisualStyleBackColor = true;
+            this.feedback_button.Click += new System.EventHandler(this.feedback_button_Click);
+            // 
             // GDZform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -326,5 +339,6 @@
         private System.Windows.Forms.Button help_button;
         private System.Windows.Forms.ToolStripMenuItem deleteSolution;
         private System.Windows.Forms.Button like_button;
+        private System.Windows.Forms.Button feedback_button;
     }
 }

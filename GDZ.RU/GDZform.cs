@@ -278,5 +278,11 @@ namespace GDZ.RU
         {
 
         }
+
+        private void feedback_button_Click(object sender, EventArgs e)
+        {
+            FeedBackForm feedbackform = new FeedBackForm();
+            feedbackform.ShowDialog();
+        }
     }
 }
