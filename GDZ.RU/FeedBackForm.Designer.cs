@@ -86,7 +86,7 @@
             this.mes_button.Name = "mes_button";
             this.mes_button.Size = new System.Drawing.Size(279, 76);
             this.mes_button.TabIndex = 4;
-            this.mes_button.Text = "button1";
+            this.mes_button.Text = "Отправить";
             this.mes_button.UseVisualStyleBackColor = false;
             this.mes_button.Click += new System.EventHandler(this.mes_button_Click);
             // 
@@ -102,7 +102,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Font = new System.Drawing.Font("asinastra", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FeedBackForm";
             this.Text = "FeedBackForm";
             this.Load += new System.EventHandler(this.FeedBackForm_Load);
