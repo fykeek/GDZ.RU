@@ -14,7 +14,7 @@ namespace GDZ.RU
     {
         public static Dictionary<solution, int> select_solutions = new Dictionary<solution, int>();
 
-        int totalPrice = 0;
+        public static int totalPrice = 0;
 
         public likeForm()
         {
@@ -27,8 +27,10 @@ namespace GDZ.RU
         {   
             Controls.Clear();
             Controls.Add(label1);
+            Controls.Add(button1);
             Calculate();
             label1.Text = "Итоговая стоимость: " + totalPrice.ToString();
+            button1.Text = "Отправить на почту";
 
             int x = 51;
             int y = 150;
@@ -212,6 +214,12 @@ namespace GDZ.RU
             }
             select_solutions = selSol;
             ReDraw();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SendForm sendForm = new SendForm();
+            sendForm.ShowDialog();
         }
     }
 }
