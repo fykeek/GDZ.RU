@@ -13,6 +13,7 @@ namespace GDZ.RU
     public partial class loginForm : Form
     {
         public static string username = "";
+        public static string mailUser = "";
         public static bool admin = false;
 
         public loginForm()
@@ -50,6 +51,7 @@ namespace GDZ.RU
                 if(login_person.Text == parts[2] && password_person.Text == parts[3])
                 {   
                     username = parts[0] + " " + parts[1];
+                    mailUser = parts[5];
                     if (parts[4] == "admin") {admin = true;}
                     MessageBox.Show("Вы вошли в аккаунт!");
                     Close();

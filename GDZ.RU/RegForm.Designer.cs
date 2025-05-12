@@ -40,6 +40,8 @@
             this.return_text = new System.Windows.Forms.Label();
             this.reg_button = new System.Windows.Forms.Button();
             this.error_text = new System.Windows.Forms.Label();
+            this.mail_textbox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // text_name
@@ -138,7 +140,7 @@
             // 
             this.reg_button.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.reg_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reg_button.Location = new System.Drawing.Point(0, 484);
+            this.reg_button.Location = new System.Drawing.Point(0, 578);
             this.reg_button.Name = "reg_button";
             this.reg_button.Size = new System.Drawing.Size(509, 61);
             this.reg_button.TabIndex = 10;
@@ -150,18 +152,38 @@
             // 
             this.error_text.AutoSize = true;
             this.error_text.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.error_text.Location = new System.Drawing.Point(17, 446);
+            this.error_text.Location = new System.Drawing.Point(19, 531);
             this.error_text.Name = "error_text";
             this.error_text.Size = new System.Drawing.Size(109, 20);
             this.error_text.TabIndex = 11;
             this.error_text.Text = "error_text";
             this.error_text.Click += new System.EventHandler(this.label1_Click);
             // 
+            // mail_textbox
+            // 
+            this.mail_textbox.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mail_textbox.Location = new System.Drawing.Point(21, 487);
+            this.mail_textbox.Name = "mail_textbox";
+            this.mail_textbox.Size = new System.Drawing.Size(227, 29);
+            this.mail_textbox.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(17, 451);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(278, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Ваша почта (необезательно)\r\n";
+            // 
             // RegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 545);
+            this.ClientSize = new System.Drawing.Size(509, 639);
+            this.Controls.Add(this.mail_textbox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.error_text);
             this.Controls.Add(this.reg_button);
             this.Controls.Add(this.return_password);
@@ -198,5 +220,7 @@
         private System.Windows.Forms.Label return_text;
         private System.Windows.Forms.Button reg_button;
         private System.Windows.Forms.Label error_text;
+        private System.Windows.Forms.TextBox mail_textbox;
+        private System.Windows.Forms.Label label1;
     }
 }

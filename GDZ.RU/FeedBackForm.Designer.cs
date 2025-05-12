@@ -42,7 +42,8 @@
             "В тех. поддержку",
             "Жалоба",
             "Благодарность",
-            "Связь со мною"});
+            "Связь со мною",
+            "Предложит новуую задачу"});
             this.comboBox1.Location = new System.Drawing.Point(23, 54);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(592, 24);

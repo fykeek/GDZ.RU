@@ -18,6 +18,10 @@ namespace GDZ.RU
         public SendForm()
         {
             InitializeComponent();
+            if(loginForm.mailUser != "")
+            {
+                adress.Text = loginForm.mailUser;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,7 +37,7 @@ namespace GDZ.RU
                 {
                     mail_message.Subject = "Ваша корзина из приложения GDZ.RU";
 
-                    mail_message.Body = "";
+                    mail_message.Body = "Корзина" + loginForm.username;
                     mail_message.IsBodyHtml = true;
 
                     System.IO.File.AppendAllText("Избранное_" + loginForm.username + ".csv", "Название;Количество;Цена");
@@ -58,7 +62,7 @@ namespace GDZ.RU
                     smtpClient.Send(mail_message);
 
                 }
-
+                System.IO.File.Delete("Избранное_" + loginForm.username + ".csv");
                 MessageBox.Show("Вы отправили сообщение");
                 Close();
             }

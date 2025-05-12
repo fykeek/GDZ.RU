@@ -33,7 +33,8 @@ namespace GDZ.RU
                     System.IO.File.AppendAllText("../../users/users.txt", name_person.Text + ", " +
                                                                     secondname_person.Text + ", " +
                                                                     login_person.Text + ", " +
-                                                                    password_person.Text + ", user" +
+                                                                    password_person.Text + ", user, " +
+                                                                    mail_textbox.Text + ", " +
                                                                     Environment.NewLine);
                     MessageBox.Show("Вы прошли регистрацию!");
                     Close();
