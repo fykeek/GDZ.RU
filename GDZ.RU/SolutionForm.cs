@@ -43,7 +43,7 @@ namespace GDZ.RU
             if(loginForm.admin)
             {
                 opisTextBox.ReadOnly = false;
-                sol_replase.Visible = true;
+                //sol_replase.Visible = true;
                 rename_opis.Visible = true;
                 subject_TextBox.Visible = true;
                 class_TextBox.Visible = true;
@@ -52,7 +52,7 @@ namespace GDZ.RU
             else
             {
                 opisTextBox.ReadOnly = true;
-                sol_replase.Visible = false;
+                //sol_replase.Visible = false;
                 rename_opis.Visible = false;
                 subject_TextBox.Visible = false;
                 class_TextBox.Visible = false;
