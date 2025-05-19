@@ -22,7 +22,7 @@ namespace GDZ.RU
             }
             else
             {
-                label1.Text = "you are moshonka";
+                label1.Text = System.IO.File.ReadAllText("../../helptext/helpuser.txt");
             }
         }
 

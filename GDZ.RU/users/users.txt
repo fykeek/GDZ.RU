@@ -1,6 +1,3 @@
 123, 456, 78, 90, user, 
-Кирилл, Баранов, 5орка, 42, admin, 
-igor, lobanov, intern, 42, user, 
-bo55, bikov, 42, 42, admin, 
-voloda, perinov, br, 11, user, 
-brenton, tarant, 51, 51, user, gdz.ru322@mail.ru
+Кирилл, Баранов, 42, 42, admin, 
+admin, admin, admin, 123, admin, 
