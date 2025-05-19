@@ -43,7 +43,10 @@ namespace GDZ.RU
             if(loginForm.admin)
             {
                 opisTextBox.ReadOnly = false;
-                //sol_replase.Visible = true;
+                sol_replase.Visible = true;
+                toclassTB.Visible = true;
+                fronclassTB.Visible = true;
+                label1.Visible = true;
                 rename_opis.Visible = true;
                 subject_TextBox.Visible = true;
                 class_TextBox.Visible = true;
@@ -52,7 +55,10 @@ namespace GDZ.RU
             else
             {
                 opisTextBox.ReadOnly = true;
-                //sol_replase.Visible = false;
+                sol_replase.Visible = false;
+                toclassTB.Visible = false;
+                fronclassTB.Visible = false;
+                label1.Visible = false;
                 rename_opis.Visible = false;
                 subject_TextBox.Visible = false;
                 class_TextBox.Visible = false;
@@ -84,18 +90,31 @@ namespace GDZ.RU
 
         private void sol_replase_Click(object sender, EventArgs e)
         {
-            /*string[] strs = System.IO.File.ReadAllLines("../../Pictures/solution.txt");
-
-            foreach (string str in strs)
+            System.IO.File.Delete("../../Pictures/solution.txt");
+            for (int i = 0; i < GDZform.solutions.Count; i++)
             {
-                string[] parts = str.Split(new string[] { ", " }, StringSplitOptions.None);
-                if(solut == parts[0])
+                if (solut != GDZform.solutions[i].name)
                 {
-                    parts[1] = subject_TextBox.Text;
-                    parts[2] = class_TextBox.Text;
-                    parts[3] = price_TextBox.Text;
+                    System.IO.File.AppendAllText("../../Pictures/solution.txt", GDZform.solutions[i].name + ", " +
+                                                                                GDZform.solutions[i].subject + ", " +
+                                                                                GDZform.solutions[i].clas_s + ", " +
+                                                                                GDZform.solutions[i].price + ", " +
+                                                                                GDZform.solutions[i].from_class + ", " +
+                                                                                GDZform.solutions[i].to_class +
+                                                                                Environment.NewLine);
                 }
-            }*/
+                else
+                {
+                    System.IO.File.AppendAllText("../../Pictures/solution.txt", GDZform.solutions[i].name + ", " +
+                                                                                subject_TextBox.Text + ", " +
+                                                                                class_TextBox.Text + ", " +
+                                                                                price_TextBox.Text + ", " +
+                                                                                toclassTB.Text + ", " +
+                                                                                fronclassTB.Text +
+                                                                                Environment.NewLine);
+                }
+            }
+            MessageBox.Show("Вы заменили параметры");
         }
 
         private void select_button_Click(object sender, EventArgs e)
