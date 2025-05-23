@@ -51,7 +51,6 @@ namespace GDZ.RU
                 subject_TextBox.Visible = true;
                 class_TextBox.Visible = true;
                 price_TextBox.Visible = true;
-                select_button.Visible = true;
             }
             else
             {
@@ -64,9 +63,15 @@ namespace GDZ.RU
                 subject_TextBox.Visible = false;
                 class_TextBox.Visible = false;
                 price_TextBox.Visible = false;
-                select_button.Visible = false;
             }
-
+            if (loginForm.username != "Гость")
+            {
+                select_button.Visible = true;
+            }
+            else 
+            {
+                select_button.Visible = false; 
+            }
             solut = _sol.name;
         }
 
