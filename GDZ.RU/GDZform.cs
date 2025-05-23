@@ -189,8 +189,7 @@ namespace GDZ.RU
 
                 if((comboBox_subject.Text != "" && comboBox_subject.Text != solutions[i].subject) ||
                     (write_name_ans.Text != "" && !solutions[i].name.Contains(write_name_ans.Text)) ||
-                    (class_box.Text != "" && (solutions[i].from_class > Convert.ToInt32(class_box.Text) ||
-                    solutions[i].to_class < Convert.ToInt32(class_box.Text))))
+                    (class_box.Text != "" && solutions[i].to_class < Convert.ToInt32(class_box.Text)))
                 {
                     solutions[i].picture.Visible = false;
                     solutions[i].label.Visible = false;

@@ -64,6 +64,7 @@ namespace GDZ.RU
                 class_TextBox.Visible = false;
                 price_TextBox.Visible = false;
             }
+
             if (loginForm.username != "Гость")
             {
                 select_button.Visible = true;
