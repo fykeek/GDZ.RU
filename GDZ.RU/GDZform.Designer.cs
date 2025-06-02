@@ -39,6 +39,7 @@
             this.write_name_ans = new System.Windows.Forms.TextBox();
             this.hide_filters = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.feedback_button = new System.Windows.Forms.Button();
             this.like_button = new System.Windows.Forms.Button();
             this.help_button = new System.Windows.Forms.Button();
             this.exit_account = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addSolutiun = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteSolution = new System.Windows.Forms.ToolStripMenuItem();
-            this.feedback_button = new System.Windows.Forms.Button();
             this.filters_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -82,7 +82,7 @@
             this.class_text.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.class_text.Location = new System.Drawing.Point(472, 77);
             this.class_text.Name = "class_text";
-            this.class_text.Size = new System.Drawing.Size(64, 20);
+            this.class_text.Size = new System.Drawing.Size(82, 25);
             this.class_text.TabIndex = 10;
             this.class_text.Text = "Класс";
             this.class_text.Click += new System.EventHandler(this.label3_Click);
@@ -92,7 +92,7 @@
             this.class_box.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.class_box.Location = new System.Drawing.Point(540, 77);
             this.class_box.Name = "class_box";
-            this.class_box.Size = new System.Drawing.Size(259, 29);
+            this.class_box.Size = new System.Drawing.Size(259, 35);
             this.class_box.TabIndex = 6;
             this.class_box.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
@@ -113,7 +113,7 @@
             this.choose_subjet.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.choose_subjet.Location = new System.Drawing.Point(8, 115);
             this.choose_subjet.Name = "choose_subjet";
-            this.choose_subjet.Size = new System.Drawing.Size(162, 20);
+            this.choose_subjet.Size = new System.Drawing.Size(207, 25);
             this.choose_subjet.TabIndex = 4;
             this.choose_subjet.Text = "Выбор предмета";
             this.choose_subjet.Click += new System.EventHandler(this.label2_Click);
@@ -135,9 +135,8 @@
             "Английский"});
             this.comboBox_subject.Location = new System.Drawing.Point(176, 112);
             this.comboBox_subject.Name = "comboBox_subject";
-            this.comboBox_subject.Size = new System.Drawing.Size(163, 28);
+            this.comboBox_subject.Size = new System.Drawing.Size(163, 33);
             this.comboBox_subject.TabIndex = 3;
-            this.comboBox_subject.Text = "  ";
             this.comboBox_subject.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // name_ans
@@ -147,7 +146,7 @@
             this.name_ans.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.name_ans.Location = new System.Drawing.Point(5, 80);
             this.name_ans.Name = "name_ans";
-            this.name_ans.Size = new System.Drawing.Size(169, 20);
+            this.name_ans.Size = new System.Drawing.Size(221, 25);
             this.name_ans.TabIndex = 2;
             this.name_ans.Text = "Название задачи";
             // 
@@ -156,7 +155,7 @@
             this.write_name_ans.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.write_name_ans.Location = new System.Drawing.Point(176, 77);
             this.write_name_ans.Name = "write_name_ans";
-            this.write_name_ans.Size = new System.Drawing.Size(259, 29);
+            this.write_name_ans.Size = new System.Drawing.Size(259, 35);
             this.write_name_ans.TabIndex = 1;
             this.write_name_ans.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -186,6 +185,17 @@
             this.panel1.Size = new System.Drawing.Size(1306, 82);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // feedback_button
+            // 
+            this.feedback_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.feedback_button.Location = new System.Drawing.Point(608, 9);
+            this.feedback_button.Name = "feedback_button";
+            this.feedback_button.Size = new System.Drawing.Size(207, 61);
+            this.feedback_button.TabIndex = 4;
+            this.feedback_button.Text = "Обратная связь";
+            this.feedback_button.UseVisualStyleBackColor = true;
+            this.feedback_button.Click += new System.EventHandler(this.feedback_button_Click);
             // 
             // like_button
             // 
@@ -226,7 +236,7 @@
             this.nickname.Font = new System.Drawing.Font("asinastra", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nickname.Location = new System.Drawing.Point(203, 26);
             this.nickname.Name = "nickname";
-            this.nickname.Size = new System.Drawing.Size(81, 25);
+            this.nickname.Size = new System.Drawing.Size(101, 31);
             this.nickname.TabIndex = 0;
             this.nickname.Text = "Гость";
             this.nickname.Click += new System.EventHandler(this.nickname_Click);
@@ -261,40 +271,30 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addSolutiun,
             this.deleteSolution});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(213, 48);
             // 
             // addSolutiun
             // 
             this.addSolutiun.Name = "addSolutiun";
-            this.addSolutiun.Size = new System.Drawing.Size(178, 22);
+            this.addSolutiun.Size = new System.Drawing.Size(212, 22);
             this.addSolutiun.Text = "Добавить задачку";
             this.addSolutiun.Click += new System.EventHandler(this.addSolutiun_Click);
             // 
             // deleteSolution
             // 
             this.deleteSolution.Name = "deleteSolution";
-            this.deleteSolution.Size = new System.Drawing.Size(178, 22);
+            this.deleteSolution.Size = new System.Drawing.Size(212, 22);
             this.deleteSolution.Text = "Удалить задачу";
             this.deleteSolution.Click += new System.EventHandler(this.deleteSolution_Click);
             // 
-            // feedback_button
-            // 
-            this.feedback_button.Font = new System.Drawing.Font("asinastra", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.feedback_button.Location = new System.Drawing.Point(608, 9);
-            this.feedback_button.Name = "feedback_button";
-            this.feedback_button.Size = new System.Drawing.Size(207, 61);
-            this.feedback_button.TabIndex = 4;
-            this.feedback_button.Text = "Обратная связь";
-            this.feedback_button.UseVisualStyleBackColor = true;
-            this.feedback_button.Click += new System.EventHandler(this.feedback_button_Click);
-            // 
             // GDZform
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1306, 807);
             this.ContextMenuStrip = this.contextMenuStrip1;
